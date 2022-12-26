@@ -68,6 +68,10 @@ function App() {
 
   return (
     <div className="App">
+      <button onClick={register}>Register</button>
+      <button onClick={login}>login</button>
+      <button onClick={logout}>logout</button>
+      {loading ? 'loading...' : user.email}
     </div>
   );
 }
