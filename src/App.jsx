@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { auth } from "./firebase/init.js";
+import { db } from "./firebase/init.js";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
