@@ -17,9 +17,7 @@ function App() {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      setTimeout(() => {
         setLoading(false);
-      }, 2000); 
       if (user) {
         setUser(user);
       }
@@ -37,7 +35,6 @@ function App() {
   }
 
   function login() {
-    setTimeout(() => {
       signInWithEmailAndPassword(auth, "email@gmail.com", "test1234")
         .then((data) => {
           setUser(data.user);
@@ -45,14 +42,11 @@ function App() {
         .catch((error) => {
           alert(error)
         });
-    }, 1000);
   }
 
   function logout() {
-    setTimeout(() => {
       signOut(auth);
       setUser({});
-    }, 1000);
   }
 
   return (
