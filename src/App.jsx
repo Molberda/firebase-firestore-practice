@@ -25,9 +25,9 @@ function App() {
   }, []);
 
   function register() {
-    createUserWithEmailAndPassword(auth, "email@gmail.com", "test1234")
+    createUserWithEmailAndPassword(auth, "emai12@gmail.com", "test1234")
       .then((data) => {
-        console.log(data);
+        console.log(data.user)
       })
       .catch((error) => {
         alert(error)
