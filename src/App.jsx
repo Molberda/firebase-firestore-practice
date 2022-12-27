@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { auth } from "./firebase/init.js";
-import { db } from "./firebase/init.js";
+import { auth, db } from "./firebase/init.js";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -14,6 +13,14 @@ function App() {
 
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
+
+  function createPost(){
+    const post = {
+      title: "land a $400k job",
+      description: "finish frontend simplified"
+    }
+    addDoc(collection(db, "posts", post))
+  }
 
 
   useEffect(() => {
