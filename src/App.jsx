@@ -18,8 +18,8 @@ function App() {
     const post = {
       title: "land a $400k job",
       description: "finish frontend simplified"
-    }
-    addDoc(collection(db, "posts", post))
+    };
+    addDoc(collection(db, "posts"), post)
   }
 
 
@@ -63,6 +63,7 @@ function App() {
       <button onClick={login}>login</button>
       <button onClick={logout}>logout</button>
       {loading ? 'loading...' : user.email}
+      <button onClick={createPost}>Create Post</button>
     </div>
   );
 }
