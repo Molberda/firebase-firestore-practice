@@ -23,6 +23,10 @@ function App() {
       title: "land a $300k job",
       description: "finish frontend simplified"
     };
+    const post2 = {
+      title: "land a $200k job",
+      description: "finish frontend simplified"
+    };
 
     addDoc(collection(db, "posts"), post)
   }
