@@ -24,8 +24,9 @@ function App() {
   }
 
   async function getAllPosts(){
-    const data = await getDocs(collection(db, "posts"))
-    // const posts = data.docs.map((doc) => ({...doc.data}))
+    const { docs } = await getDocs(collection(db, "posts"))
+    const posts = docs.map((doc) => (doc.data()))
+    console.log(posts)
   }
 
 
@@ -70,6 +71,7 @@ function App() {
       <button onClick={logout}>logout</button>
       {loading ? 'loading...' : user.email}
       <button onClick={createPost}>Create Post</button>
+      <button onClick={getAllPosts}>Get All Posts</button>
     </div>
   );
 }
