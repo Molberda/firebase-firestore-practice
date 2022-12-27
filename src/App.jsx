@@ -25,7 +25,7 @@ function App() {
 
   async function getAllPosts(){
     const { docs } = await getDocs(collection(db, "posts"))
-    const posts = docs.map((doc) => (doc.data()))
+    const posts = docs.map((doc) => ({...doc.data(), id: doc.id}))
     console.log(posts)
   }
 
