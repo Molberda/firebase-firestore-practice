@@ -7,7 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 
 function App() {
 
@@ -16,19 +16,16 @@ function App() {
 
   function createPost(){
     const post = {
-      title: "land a $400k job",
-      description: "finish frontend simplified"
-    };
-    const post1 = {
-      title: "land a $300k job",
-      description: "finish frontend simplified"
-    };
-    const post2 = {
-      title: "land a $200k job",
+      title: "land a $100k job",
       description: "finish frontend simplified"
     };
 
     addDoc(collection(db, "posts"), post)
+  }
+
+  async function getAllPosts(){
+    const data = await getDocs(collection(db, "posts"))
+    // const posts = data.docs.map((doc) => ({...doc.data}))
   }
 
 
