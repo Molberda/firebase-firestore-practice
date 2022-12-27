@@ -8,6 +8,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
+import { collection, addDoc } from 'firebase/firestore';
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
   }, []);
 
   function register() {
-    createUserWithEmailAndPassword(auth, "emai12@gmail.com", "test1234")
+    createUserWithEmailAndPassword(auth, "email12@gmail.com", "test1234")
       .then((data) => {
         console.log(data.user)
       })
@@ -35,7 +36,7 @@ function App() {
   }
 
   function login() {
-      signInWithEmailAndPassword(auth, "email@gmail.com", "test1234")
+      signInWithEmailAndPassword(auth, "email12@gmail.com", "test1234")
         .then((data) => {
           setUser(data.user);
         })
