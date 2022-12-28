@@ -78,6 +78,7 @@ function App() {
       {loading ? 'loading...' : user.email}
       <button onClick={createPost}>Create Post</button>
       <button onClick={getAllPosts}>Get All Posts</button>
+      <button onClick={getPostById}>Get Post By Id</button>
     </div>
   );
 }
