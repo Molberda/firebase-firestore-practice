@@ -29,6 +29,10 @@ function App() {
     console.log(posts)
   }
 
+  function getPostById(){
+    
+  }
+
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
