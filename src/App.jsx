@@ -16,8 +16,8 @@ function App() {
 
   function createPost(){
     const post = {
-      title: "land a $100k job",
-      description: "finish frontend simplified",
+      title: "Finish Firebase Section",
+      description: "Do frontend simplified",
       uid: user.uid
     };
 
