@@ -17,7 +17,8 @@ function App() {
   function createPost(){
     const post = {
       title: "land a $100k job",
-      description: "finish frontend simplified"
+      description: "finish frontend simplified",
+      uid: user.uid
     };
 
     addDoc(collection(db, "posts"), post)
@@ -61,6 +62,7 @@ function App() {
       signInWithEmailAndPassword(auth, "email12@gmail.com", "test1234")
         .then((data) => {
           setUser(data.user);
+          console.log(data.user)
         })
         .catch((error) => {
           alert(error)
