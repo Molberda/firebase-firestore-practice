@@ -7,7 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { collection, addDoc, getDocs, getDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs, getDoc, doc } from 'firebase/firestore';
 
 function App() {
 
@@ -30,7 +30,9 @@ function App() {
   }
 
   function getPostById(){
-    
+    const hardCodedId = "23Ujz5DJIgFWvYJqeAY1"
+    const postRef = doc(db, "posts", hardCodedId)
+    console.log(postRef)
   }
 
 
