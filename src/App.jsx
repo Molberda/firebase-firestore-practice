@@ -25,7 +25,13 @@ function App() {
   }
 
   function updatePost(){
-    
+    const hardCodedId = "suHs0t75foFxpIODmzGE"
+    const postRef = doc(db, "posts", hardCodedId)
+    const post = {
+      title: "Updated post",
+      description: "Do frontend simplified1",
+      uid: user.uid
+    }
   }
 
   async function getAllPosts(){
