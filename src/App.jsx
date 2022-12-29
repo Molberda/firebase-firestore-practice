@@ -31,11 +31,15 @@ function App() {
   }
 
   async function getPostById(){
-    const hardCodedId = "23Ujz5DJIgFWvYJqeAY1"
+    const hardCodedId = "suHs0t75foFxpIODmzGE"
     const postRef = doc(db, "posts", hardCodedId)
     const postSnap = await getDoc(postRef)
     const post = postSnap.data()
     console.log(post)
+  }
+
+  async function getPostById(){
+    
   }
 
 
