@@ -42,12 +42,10 @@ function App() {
     console.log(posts)
   }
 
-  async function getPostById(){
-    const hardCodedId = "suHs0t75foFxpIODmzGE"
-    const postRef = doc(db, "posts", hardCodedId)
+  async function getPostById(id){
+    const postRef = doc(db, "posts", id)
     const postSnap = await getDoc(postRef)
-    const post = postSnap.data()
-    console.log(post)
+    return postSnap.data()
   }
 
   async function getPostByUid(){
