@@ -44,7 +44,8 @@ function App() {
     where("uid", "==", user.uid)
     )
     const { docs } = await getDocs(postCollectionRef)
-    console.log(docs)
+    const postDisplay = docs.map(doc => doc.data())
+    console.log(postDisplay)
   }
 
 
