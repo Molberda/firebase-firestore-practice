@@ -25,14 +25,15 @@ function App() {
     addDoc(collection(db, "posts"), post)
   }
 
-  function updatePost(){
+  async function updatePost(){
     const hardCodedId = "23Ujz5DJIgFWvYJqeAY1"
     const postRef = doc(db, "posts", hardCodedId)
+    const post = await getPostById(hardCodedId)
     const newPost = {
-      title: "Updated post21",
-      description: "woohooo",
-      uid: user.uid
+      ...post,
+      title: "Updated post213333",
     }
+    console.log(newPost)
     updateDoc(postRef, newPost)
   }
 
