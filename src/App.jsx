@@ -27,11 +27,12 @@ function App() {
   function updatePost(){
     const hardCodedId = "suHs0t75foFxpIODmzGE"
     const postRef = doc(db, "posts", hardCodedId)
-    const post = {
+    const newPost = {
       title: "Updated post",
       description: "Do frontend simplified1",
       uid: user.uid
     }
+    updateDoc(postRef, newPost)
   }
 
   async function getAllPosts(){
