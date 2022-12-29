@@ -7,7 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { collection, addDoc, getDocs, getDoc, doc, query, where } from 'firebase/firestore';
+import { collection, addDoc, getDocs, getDoc, doc, query, where, updateDoc } from 'firebase/firestore';
 
 function App() {
 
