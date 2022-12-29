@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  updateProfile,
 } from "firebase/auth";
 import { collection, addDoc, getDocs, getDoc, doc, query, where, updateDoc } from 'firebase/firestore';
 
@@ -25,11 +26,11 @@ function App() {
   }
 
   function updatePost(){
-    const hardCodedId = "suHs0t75foFxpIODmzGE"
+    const hardCodedId = "23Ujz5DJIgFWvYJqeAY1"
     const postRef = doc(db, "posts", hardCodedId)
     const newPost = {
-      title: "Updated post",
-      description: "Do frontend simplified1",
+      title: "Updated post21",
+      description: "woohooo",
       uid: user.uid
     }
     updateDoc(postRef, newPost)
@@ -105,6 +106,7 @@ function App() {
       <button onClick={getAllPosts}>Get All Posts</button>
       <button onClick={getPostById}>Get Post By Id</button>
       <button onClick={getPostByUid}>Get Post By Uid</button>
+      <button onClick={updatePost}>Update Post</button>
     </div>
   );
 }
