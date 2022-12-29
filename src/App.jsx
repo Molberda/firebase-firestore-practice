@@ -8,7 +8,7 @@ import {
   onAuthStateChanged,
   updateProfile,
 } from "firebase/auth";
-import { collection, addDoc, getDocs, getDoc, doc, query, where, updateDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs, getDoc, doc, query, where, updateDoc, deleteDoc } from 'firebase/firestore';
 
 function App() {
 
@@ -35,6 +35,12 @@ function App() {
     }
     console.log(newPost)
     updateDoc(postRef, newPost)
+  }
+
+  function deletePost(){
+    const hardCodedId = "23Ujz5DJIgFWvYJqeAY1"
+    const postRef = doc(db, "posts", hardCodedId)
+    deleteDoc(postRef)
   }
 
   async function getAllPosts(){
@@ -106,6 +112,7 @@ function App() {
       <button onClick={getPostById}>Get Post By Id</button>
       <button onClick={getPostByUid}>Get Post By Uid</button>
       <button onClick={updatePost}>Update Post</button>
+      <button onClick={deletePost}>Delete Post</button>
     </div>
   );
 }
