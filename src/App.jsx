@@ -90,6 +90,7 @@ function App() {
       <button onClick={createPost}>Create Post</button>
       <button onClick={getAllPosts}>Get All Posts</button>
       <button onClick={getPostById}>Get Post By Id</button>
+      <button onClick={getPostByUid}>Get Post By Uid</button>
     </div>
   );
 }
