@@ -38,7 +38,7 @@ function App() {
     console.log(post)
   }
 
-  async function getPostById(){
+  async function getPostByUid(){
     const postCollection = await query(
     collection(db, "posts"),
     where("uid", "==", user.uid)
