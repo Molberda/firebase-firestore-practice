@@ -39,7 +39,10 @@ function App() {
   }
 
   async function getPostById(){
-    
+    const postCollection = await query(
+    collection(db, "posts"),
+    where("uid", "==", user.uid)
+    )
   }
 
 
