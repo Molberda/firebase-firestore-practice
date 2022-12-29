@@ -16,8 +16,8 @@ function App() {
 
   function createPost(){
     const post = {
-      title: "Finish Firebase Section",
-      description: "Do frontend simplified",
+      title: "Finish Firebase Section1",
+      description: "Do frontend simplified1",
       uid: user.uid
     };
 
@@ -39,10 +39,12 @@ function App() {
   }
 
   async function getPostByUid(){
-    const postCollection = await query(
+    const postCollectionRef = await query(
     collection(db, "posts"),
     where("uid", "==", user.uid)
     )
+    const { docs } = await getDocs(postCollectionRef)
+    console.log(docs)
   }
 
 
